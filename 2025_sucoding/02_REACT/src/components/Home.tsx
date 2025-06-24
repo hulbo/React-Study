@@ -18,6 +18,36 @@ import Notification from "./Seven/Notification";
 import FruitsList from "./Seven/FruitsList";
 import FillerList from "./Seven/FillerList";
 import RecipeList from "./Seven/RecipeList";
+import Style01 from "./Eight/Style01";
+import ButtonGroup from "./Eight/ButtonGroup";
+import { initialButtons } from "../data/initialData";
+import styled, { keyframes, css } from "styled-components";
+import TrafficLightComponent from "./Eight/TrafficLightComponent";
+
+const boxShadowMixin = css`
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+`;
+
+const Title = styled.h1<{ $color: string }>`
+  color: ${(props) => props.$color};
+  text-decoration: underline;
+  &:hover {
+    color: pink;
+  }
+`;
+const BigTitle = styled(Title)`
+  font-size: ${(props) => props.theme.fontSize.normal};
+`;
+
+const Wrapper = styled.section`
+  padding: 2rem;
+  border: 1px solid red;
+`;
+const BlueBorderWrapper = styled(Wrapper)<{ $shadow: boolean }>`
+  border-color: ${(props) => props.theme.colors.primary};
+  ${(props) => props.$shadow && boxShadowMixin};
+`;
+
 export default function Home() {
   // const handleClick = (message: string) => alert(message);
   // const handleClick2 = (
@@ -54,8 +84,27 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home Component</h1>
-      <RecipeList />
+      <TrafficLightComponent />
+      {/*       
+      <BlueBorderWrapper $shadow>
+        <Wrapper>
+          <Title
+            $color="red"
+            as="p"
+            title="111111111111"
+            onClick={() => alert("111")}
+          >
+            P테그로 변경 해봄 AS
+          </Title>
+          <Title $color="red">Home Component</Title>
+          <BigTitle $color="blue">TEST</BigTitle>
+        </Wrapper>
+      </BlueBorderWrapper> */}
+      {/* <ButtonGroup initialButtons={initialButtons} /> */}
+      {/* <Style01 /> */}
+
+      {/* 7강 
+      <RecipeList /> */}
       {/* <FillerList /> */}
       {/* <FruitsList /> */}
       {/* <Notification /> */}
