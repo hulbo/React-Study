@@ -5,10 +5,19 @@
 // import DataTypePring from "./Four/DataTypePring";
 // import RefDataTypePring from "./Four/RefDataTypePring";
 
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import Count from "./Six/Count";
 import UseStateTest from "./Six/UseStateTest";
 import counterReducer from "../reducer/counterReducer";
+import Greeting from "./Seven/Greeting";
+import LoginStatus from "./Seven/LoginStatus";
+import StatusMessage from "./Seven/StatusMessage";
+import TrfficLight from "./Seven/TrfficLight";
+import LoginView from "./Seven/LoginView";
+import Notification from "./Seven/Notification";
+import FruitsList from "./Seven/FruitsList";
+import FillerList from "./Seven/FillerList";
+import RecipeList from "./Seven/RecipeList";
 export default function Home() {
   // const handleClick = (message: string) => alert(message);
   // const handleClick2 = (
@@ -19,13 +28,52 @@ export default function Home() {
   //   console.log(message);
   //   event.currentTarget.innerText = message;
   // };
+  // 6강
+  //const [count, countDispatch] = useReducer(counterReducer, 0);
+  // 7강
+  //const isLoggedIn = true;
+  // const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  // const handleLogIn = () => setIsLoggedIn(true);
+  // const handleLogOut = () => setIsLoggedIn(false);
+  // const [light, setLight] = useState("red");
+  // const handleChangeLight = () => {
+  //   setLight((light) => {
+  //     switch (light) {
+  //       case "red":
+  //         return "yellow";
+  //       case "yellow":
+  //         return "green";
+  //       case "green":
+  //         return "red";
+  //       default:
+  //         return "red";
+  //     }
+  //   });
+  // };
+  const isLoggedIn = true;
 
-  const [count, countDispatch] = useReducer(counterReducer, 0);
   return (
     <>
       <h1>Home Component</h1>
-      {/* <UseStateTest /> */}
-      <Count />
+      <RecipeList />
+      {/* <FillerList /> */}
+      {/* <FruitsList /> */}
+      {/* <Notification /> */}
+      {/* {isLoggedIn && <h1>안녕하세요!!!</h1>}
+      {!isLoggedIn && <h1>우라랄라라@@@</h1>} */}
+      {/* <LoginView /> */}
+      {/* <h1>{isLoggedIn ? "오키도코" : "로그인안됨"}</h1> */}
+      {/* <TrfficLight light={light} handleChangeLight={handleChangeLight} /> */}
+      {/* <button onClick={(light) => handleLightClick}>번튼작동</button> */}
+      {/* <StatusMessage /> */}
+      {/* <LoginStatus
+        isLoggedIn={isLoggedIn}
+        handleLogIn={handleLogIn}
+        handleLogOut={handleLogOut}
+      /> */}
+      {/* <Greeting isLoggedIn={isLoggedIn} /> */}
+      {/* 6강 <UseStateTest /> */}
+      {/* <Count /> */}
       {/* <h1>Count: {count}</h1>
       <button onClick={() => countDispatch({ type: "DECREMENT" })}>감소</button>
       <button onClick={() => countDispatch({ type: "RESET" })}>리셋</button>
